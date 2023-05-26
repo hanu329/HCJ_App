@@ -1,0 +1,117 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  nav {
+    background-color: black;
+    height: 15vh;
+  }
+  .flex_nav{
+    display: flex;
+    justify-content: space-between;
+  }
+  .flex_nav>div:first-child{
+    margin-left: 20px;
+  }
+  nav ul > li {
+    list-style-type: none;
+    display: inline-block;
+    color: purple;
+    font-size: 22px;
+    
+   padding:20px;
+  }
+  nav ul > li a:hover {
+    color: white;
+    /* background-color: red; */
+    box-shadow: rgba(30, 30, 90, 0.24) 0px 3px 8px;
+  }
+  a {
+    text-decoration: none;
+    color: purple;
+  }
+
+  .main {
+    display: flex;
+    width: 90%;
+    margin: 30px auto;
+    justify-content: space-between;
+  }
+  #left {
+    width: 30%;
+    /* border: 2px solid teal; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .side_img{
+    margin:20px;
+  }
+  #right {
+    width: 68%;
+    /* border: 2px solid teal; */
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #right > div {
+    width: 30%;
+    height: auto;
+    /* border: 2px solid red; */
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  #right > div > img {
+    margin: 5px;
+    width: 60%;
+    height: 50%;
+    margin-left: 30px;
+  }
+  .price {
+    color: red;
+    padding-bottom: 5px;
+  }
+  .textDiv {
+    padding-left: 20px;
+  }
+  .textDiv > h5 {
+    padding-bottom: 5px;
+  }
+  .textDiv > button {
+    padding: 3px;
+    background-color: green;
+    color: whitesmoke;
+    border: none;
+    /* border-radius: 5px; */
+  }
+  .footText{
+   
+    width:100%;
+    height: 150px;
+    padding-top:50px;
+    background-color: black;
+    color: white;
+
+  }
+  .footText>ul>li{
+    display:inline-block;
+    padding:20px;
+  }
+  .footText>div{
+    text-align: center;
+  }
+  @media only screen and (max-width: 992px) {
+    #right > div {
+      width: 46%;
+      height: auto;
+      border: 2px solid red;
+      margin: 10px;
+    }
+  }
+  @media only screen and (max-width: 850px) {
+    #right > div {
+      width: 80%;
+      height: auto;
+      border: 2px solid red;
+      margin: 10px;
+      margin: 10px auto;
+    }
+  }

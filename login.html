@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      nav {
+        background-color: black;
+        height: 15vh;
+      }
+      ul {
+        text-align: right;
+      }
+      ul > li {
+        list-style-type: none;
+        display: inline-block;
+        color: purple;
+        font-size: 22px;
+        margin: 10px;
+        padding-top: 15px;
+      }
+      ul > li a:hover {
+        color: white;
+        /* background-color: red; */
+        box-shadow: rgba(30, 30, 90, 0.24) 0px 3px 8px;
+      }
+      a {
+        text-decoration: none;
+        color: purple;
+      }
+      div {
+        margin: 100px auto;
+        /* border: 2px solid teal; */
+        width: 40vw;
+        height: auto;
+      }
+
+      input {
+        margin: 10px;
+        margin-left: 50px;
+        width: 30vw;
+        height: 5vh;
+      }
+      /* [type="submit"] {
+        margin-left: 53px;
+      } */
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">signup</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2>Login form</h2>
+      <form action="" name="login_form" onsubmit="signin_form(event)">
+        <input type="text" placeholder="enter name" id="txt" />
+        <input type="email" placeholder="enter email" id="email" />
+        <input type="submit" />
+      </form>
+    </div>
+    <script src="js/login.js"></script>
+  </body>
+</html>
