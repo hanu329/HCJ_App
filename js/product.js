@@ -45,6 +45,17 @@ const cartItem=(index)=>{
     localStorage.setItem("cart",JSON.stringify(cart))
 }
 
+const removeCartItem=(index)=>{
+ 
+  for(let item in cart){
+   if(item==index){
+       cart[index]=cart[index]-1;
+       
+   }
+  }
+   localStorage.setItem("cart",JSON.stringify(cart))
+}
+
 const DisplayProduct=()=>{
    data.map((el)=>{
     let h5=document.createElement("h5");
@@ -57,9 +68,15 @@ const DisplayProduct=()=>{
     let btn=document.createElement("button")
     btn.innerText="add to cart"
     btn.addEventListener("click",function(){cartItem(el.id)})
+
+    let btn1 =document.createElement("button")
+    btn1.innerText="remove from cart"
+    btn1.addEventListener("click", function(){
+      removeCartItem(el.id)
+    })
     let div2=document.createElement("div")
     
-    div2.append(h5,p, btn)
+    div2.append(h5,p, btn, btn1)
     div2.setAttribute("class", "textDiv")
     let div=document.createElement("div");
     div.append(img, div2)

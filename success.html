@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <style>
+      div {
+        text-align: center;
+        margin: auto;
+        width: 40%;
+        height: 20vh;
+        background-color: green;
+        color: white;
+        font-size: 30px;
+        padding-top: 30px;
+      }
+      button {
+        padding: 10px;
+        background-color: aliceblue;
+        border: none;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>Your order is placed</div>
+    <button onclick="homepage()">Go on home page</button>
+  </body>
+</html>
+<script>
+  const homepage = () => {
+    window.location.href = "index.html";
+  };
+
+  let str = "demo demo2 demo3";
+  let bag = "";
+  let ans = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == " ") {
+      ans += bag.split("").reverse().join("") + " ";
+      bag = "";
+    } else if (i == str.length - 1) {
+      bag += str[i];
+      ans += bag.split("").reverse().join("") + " ";
+    } else {
+      bag += str[i];
+    }
+  }
+  console.log(ans);
+</script>

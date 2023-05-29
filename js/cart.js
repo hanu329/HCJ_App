@@ -23,12 +23,17 @@ let data=[{"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
 
 
 let cartItem= JSON.parse(localStorage.getItem("cart"))
+let total=0;
 
 
+console.log(cartItem)
 const renderCart=()=>{
+
    data.map((el)=>{
-    for(let item in cartItem){
-        if(cartItem[item]>0 && item==el.id){
+    for(let i in cartItem){
+    
+        if(cartItem[i]>0 && el.id==i){
+           
             let img=document.createElement("img")
             img.src=el.image;
             img.setAttribute("height","200px")
@@ -36,13 +41,19 @@ const renderCart=()=>{
             title.innerText=el.title
             let price=document.createElement("p")
             price.innerText="inr : " +el.price;
+         
+          total+=cartItem[i]*el.price;
+            
             price.setAttribute("class","price")
+
+            let item=document.createElement("p")
+            item.innerText="items : " +cartItem[i]
            let div1=document.createElement("div")
            div1.append(img)
            div1.setAttribute("class","left")
 
            let div2=document.createElement("div")
-           div2.append(title,price)
+           div2.append(title,price, item)
            div2.setAttribute("class","right")
            let divMain=document.createElement("div")
            divMain.append(div1, div2)
@@ -52,3 +63,8 @@ const renderCart=()=>{
    })
 }
 renderCart()
+document.querySelector(".totalprice").innerHTML=`Your total price : ${total.toFixed(2)}`
+
+const payment =()=>{
+    window.location.href="success.html"
+}
