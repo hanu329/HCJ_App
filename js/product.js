@@ -56,7 +56,60 @@ const removeCartItem=(index)=>{
    localStorage.setItem("cart",JSON.stringify(cart))
 }
 
-const DisplayProduct=()=>{
+
+const handleSort =()=>{
+  let value= document.getElementById("sort").value;
+  
+   //console.log(value)
+  data.sort((a,b)=>{
+      if(value=="lth"){
+        //console.log(a.price)
+        return a.price-b.price;
+      }
+      else{
+        return b.price-a.price;
+      }
+  })
+ DisplayProduct(data)
+}
+
+
+
+const handlefilter =()=>{
+  console.log(1)
+  let value= document.getElementById("filter").value;
+  console.log(value)
+  let ans=data.filter((el)=>{
+    if(value=="four"){
+      return el.rating.rate>4
+    }
+    else if(value=="three"){
+      return el.rating.rate>3
+    }
+     else if(value=="two"){
+      return el.rating.rate>2
+    }
+    else{
+      return el
+    }
+  })
+  console.log(ans)
+ DisplayProduct(ans)
+}
+
+let images=["images/ecom1.png","images/ecom2.png","images/ecom3.jpg"]
+let i=0;
+setInterval(()=>{
+  document.querySelector("#imgslide").src=images[i]
+  if(i==2){
+    i=0;
+  }
+  i++
+},2000)
+
+
+const DisplayProduct=(data)=>{
+  document.querySelector("#right").innerHTML =""
    data.map((el)=>{
     let h5=document.createElement("h5");
     h5.innerText=el.title;
@@ -65,6 +118,17 @@ const DisplayProduct=()=>{
     let p=document.createElement("p")
     p.innerText= "inr:  "+el.price;
     p.setAttribute("class","price")
+
+    let rate =document.createElement("div")
+    rate.innerHTML=el.rating.rate+` <img
+    src="https://cdn-icons-png.flaticon.com/512/118/118669.png"
+    alt=""
+    height="10px"
+    width="10px"
+  />`;
+
+  rate.style.color="teal"
+    
     let btn=document.createElement("button")
     btn.innerText="add to cart"
     btn.addEventListener("click",function(){cartItem(el.id)})
@@ -76,7 +140,7 @@ const DisplayProduct=()=>{
     })
     let div2=document.createElement("div")
     
-    div2.append(h5,p, btn, btn1)
+    div2.append(rate,h5,p, btn, btn1)
     div2.setAttribute("class", "textDiv")
     let div=document.createElement("div");
     div.append(img, div2)
@@ -86,4 +150,4 @@ const DisplayProduct=()=>{
    )
 }
 
-DisplayProduct()
+DisplayProduct(data)

@@ -3,7 +3,7 @@
   <head>
     <title>Document</title>
     <style>
-      div {
+      .success {
         text-align: center;
         margin: auto;
         width: 40%;
@@ -22,28 +22,20 @@
     </style>
   </head>
   <body>
-    <div>Your order is placed</div>
+    <div class="success">Your order is placed</div>
     <button onclick="homepage()">Go on home page</button>
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/118/118669.png"
+      alt=""
+      height="10px"
+      width="10px"
+    />
+    <div class="star"></div>
+    <img src="images/ecom.png" alt="" height="400px" width="100%" />
   </body>
 </html>
 <script>
   const homepage = () => {
     window.location.href = "index.html";
   };
-
-  let str = "demo demo2 demo3";
-  let bag = "";
-  let ans = "";
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] == " ") {
-      ans += bag.split("").reverse().join("") + " ";
-      bag = "";
-    } else if (i == str.length - 1) {
-      bag += str[i];
-      ans += bag.split("").reverse().join("") + " ";
-    } else {
-      bag += str[i];
-    }
-  }
-  console.log(ans);
 </script>

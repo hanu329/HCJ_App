@@ -22,7 +22,31 @@
         </div>
       </div>
     </nav>
-
+    <img src="" alt="" height="400px" width="100%" id="imgslide" />
+    <select
+      name="filter"
+      id="filter"
+      onchange="handlefilter()"
+      style="margin-top: 5px"
+    >
+      <option value="none" disabled selected>filter</option>
+      <option value="four">4 star and above</option>
+      <option value="three">3 star and aboe</option>
+      <option value="two">2 star and above</option>
+      \
+      <option value="all">All</option>
+    </select>
+    &nbsp; &nbsp;
+    <select
+      name="sort"
+      id="sort"
+      onchange="handleSort()"
+      style="margin-top: 5px"
+    >
+      <option value="none" disabled selected>Sort</option>
+      <option value="lth">price- low to high</option>
+      <option value="htl">price- high to low</option>
+    </select>
     <div class="main">
       <div id="left">
         <img
